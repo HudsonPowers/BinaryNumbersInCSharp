@@ -224,6 +224,7 @@ Which of the following are integers:
    * 0b10101010 - YES
    * -42 - YES
 
+FEEDBACK: Looks great!
 
 ## Negative Integers
 
@@ -281,6 +282,8 @@ Answer the following question in your copy of the `README.md` file.
   * `0xFD` - 1101111 - negative
   * `0xF1` - 11100001 - negative
   * `0xBD` - 10111111 - negative
+
+FEEDBACK: Looks great!
   
 ## Negative Integers in C#
 
@@ -380,11 +383,26 @@ Answer the following question in your copy of the `README.md` file.
 For each of the following, specify if the resulting calculation will result in
 an Overflow, Underflow, or No Error.
 
-* Using 4-bit signed integers: 4 + 4 - No Error
+* Using 4-bit signed integers: 4 + 4 - No Error (This will result in an Overflow error.)
+
+In a 4-bit signed integer, 7 is the maximum positive value. When you sum 4 + 4,
+the result should be 8. However, because there isn't enough bits to represent 8,
+it overflows to -8.
+
 * Using 4-bit signed integers: 0 - 4 No Error
-* Using 4-bit signed integers: -7 - 2 No Error
+* Using 4-bit signed integers: -7 - 2 No Error (This will result in an
+  Underflow error.)
+
+The minimum value that can be stored in a 4-bit signed integer is -8. The
+difference `-7 - 2` is `-9` which cannot be represented. Because the result
+should be less than the minimum value, this results in an underflow error.
+
 * Using 6-bit signed integers: 30 + 2 Overflow
-* Using 6-bit signed integers: 0 - 32 Underflow
+* Using 6-bit signed integers: 0 - 32 Underflow (This will not result in an error.)
+
+The minimum value that can be stored in a 6-bit signed integer is -32. The
+difference `0 - 32` is `-32` which can be represented. Thus, there is no error.
+
 * Using 6-bit signed integers: 14 - 16 No Error
 
 ## Submit your Work
